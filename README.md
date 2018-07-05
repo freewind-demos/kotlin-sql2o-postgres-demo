@@ -21,3 +21,9 @@ Command to query roles:
 ```
 psql -l
 ```
+
+Postgres GUI
+------------
+
+Use `Postico` on Mac.
+
