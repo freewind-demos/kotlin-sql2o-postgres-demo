@@ -4,9 +4,9 @@ import org.sql2o.Connection
 import org.sql2o.Sql2o
 import java.sql.DriverManager
 
-val DB_URL = "jdbc:h2:mem:mydb"
-private val USERNAME = "sa"
-private val PASSWORD = "sa"
+private const val DB_URL = "jdbc:postgresql://localhost:5432/sql2o-demo"
+private const val USERNAME = "freewind"
+private const val PASSWORD = ""
 
 
 fun main(args: Array<String>) {
@@ -49,7 +49,7 @@ private fun query(conn: Connection) {
 data class User(val id: Int, val name: String)
 
 private fun prepareDb() {
-    Class.forName("org.h2.Driver")
+    Class.forName("org.postgresql.Driver")
     val conn = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD)
     conn.createStatement().use { stmt ->
         with(stmt) {
